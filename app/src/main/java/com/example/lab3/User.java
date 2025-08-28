@@ -1,13 +1,32 @@
 package com.example.lab3;
 
-public class User {
+public abstract class User {
     //Attribute
     String name;
-    int id ;
+    String id ;
+
+    //getter method
+    public String getName(){
+        return  name;
+    }
+
+    public String getId(){
+        return id;
+    }
+
+    //setter method
+    public void setName(String newName){
+        this.name = newName;
+    }
+
+    public void setId(String newId){
+        this.id = newId;
+    }
+
    //Method
-   void take_note(){
+   abstract public String  getSummary();
 
        //System.out.println(name+":"+id":");
 
-   }
+
 }
