@@ -4,7 +4,7 @@ public abstract class Note {
     //Attribute
     public String title;
     public String createdDate;
-    public User user;
+    public User owner;
     //getter method
     public String getTitle(){
         return title;
@@ -13,7 +13,7 @@ public abstract class Note {
         return createdDate;
     }
     public User getUser(){
-        return user;
+        return owner;
     }
     //setter method
     public void setTitle(String newTitle){
@@ -23,8 +23,8 @@ public abstract class Note {
     public void setCreatedDate(String newCreatedDate){
         this.createdDate=newCreatedDate;
     }
-    public User getName(String newUser){this.user = user;
-        return null;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
     //Method
     abstract public String  getSummary();

@@ -26,7 +26,7 @@ public class AddNoteActivity extends AppCompatActivity {
 
     TextView display;
 
-    TextView display1;
+    TextView display1,display2 ;
 
     Button addcheck;
 
@@ -56,6 +56,7 @@ public class AddNoteActivity extends AppCompatActivity {
         textContent = findViewById(R.id.editTextText2);
         display = findViewById(R.id.textView3);
         display1 = findViewById(R.id.textView4);
+        display2 = findViewById(R.id.textView6);
         addcheck = findViewById(R.id.button3);
         name = findViewById(R.id.editTextText3);
         id = findViewById(R.id.editTextText4);
@@ -70,6 +71,8 @@ public class AddNoteActivity extends AppCompatActivity {
 
                 String strOfDate = new Date().toString();
 
+                String strOfName = name.getText().toString();
+                String strOfId = id.getText().toString();
 
                 //set data to TextNote class
                 TextNote note1 = new TextNote();
@@ -78,9 +81,14 @@ public class AddNoteActivity extends AppCompatActivity {
                 note1.setTextContent(strOfContent);
 
                 note1.createdDate = strOfDate;
+                //set data to User class
+                TextUser user1 = new TextUser();
+                user1.setName(strOfName);
+                user1.setId(strOfId);
 
                 //show note on TextView
                 display.setText(note1.getSummary());
+                display2.setText(user1.getSummary());
             }
         });
         addcheck.setOnClickListener(new View.OnClickListener() {
