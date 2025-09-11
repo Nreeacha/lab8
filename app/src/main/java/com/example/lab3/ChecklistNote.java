@@ -5,9 +5,18 @@ import java.util.List;
 public class ChecklistNote extends Note{
     //Attribute
     private List<String> items;
+    public ChecklistNote(String title, String createdDate, List<String> items) {
+        this.title = title;
+        this.createdDate = createdDate;
+        this.items = items;
+    }
+
+    public ChecklistNote() {
+
+    }
 
     //getter method
-    private List<String>getItems(){
+    public List<String>getItems(){
         return items;
     }
 

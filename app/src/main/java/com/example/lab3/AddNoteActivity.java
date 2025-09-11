@@ -1,6 +1,7 @@
 package com.example.lab3;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Date;
+import java.util.concurrent.Executors;
 
 public class AddNoteActivity extends AppCompatActivity {
     Button addBack;
@@ -89,6 +91,13 @@ public class AddNoteActivity extends AppCompatActivity {
                 //show note on TextView
                 display.setText(note1.getSummary());
                 display2.setText(user1.getSummary());
+
+                NoteEntity entity = NoteMapper.toEntity(note1);
+
+                Context context = view.getContext();
+                Executors.newSingleThreadExecutor().execute(() -> {
+                    AppDatabase.getInstance(context).noteDao().insert(entity);
+                });
             }
         });
         addcheck.setOnClickListener(new View.OnClickListener() {

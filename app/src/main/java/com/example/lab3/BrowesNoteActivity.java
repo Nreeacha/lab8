@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class BrowesNoteActivity extends AppCompatActivity {
 
-    Button addSearch ;
+    Button addSearch,back2 ;
     ProgressBar progressBar2;
     EditText text;
     TextView display2;
@@ -32,6 +32,16 @@ public class BrowesNoteActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        back2=findViewById(R.id.button6);
+        back2.setOnClickListener(new View.OnClickListener() {//event listener
+            @Override
+            public void onClick(View view) {//event handler
+                System.out.println("Click!!");
+                Intent addBack = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(addBack);
+            }
+
         });
         text=findViewById(R.id.editTextText5);
         progressBar2=findViewById(R.id.progressBar2);
