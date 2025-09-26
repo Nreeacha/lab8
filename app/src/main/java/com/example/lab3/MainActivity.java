@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         addButton = findViewById(R.id.button);//event aource
         logo = findViewById(R.id.imageView);
-        logo.setImageResource(R.drawable.me);
+        logo.setImageResource(R.drawable.oon);
 
         addButton.setOnClickListener(new View.OnClickListener() {//event listener
             @Override
@@ -80,29 +80,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   /* public static void main(String[] args) {
-Note noteA = new Note();
-noteA.title="OOP class";
-//noteA.createdDate=17768;
-//noteA.content="Coding OOP class and object";
-//noteA.getSummary();
 
-User user1 = new TextUser();
-user1.name = "it";
-user1.id = 1511 ;
-//user1.take_note();
-user1.getSummary();
-
-TextNote textNote1 = new TextNote();
-textNote1.title = "";
-//textNote1.textContent="Coding OOP class and object";
-textNote1.setTextContent("Coding OOP class and object");
-textNote1.createdDate = "02" ;
-
-
-
-
-
-
-    }*/
 }
